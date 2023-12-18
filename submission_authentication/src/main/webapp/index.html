@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Sign-Up Form</h1>
+        <div class="language-select">
+            <label for="language">Select Language</label>
+            <select id="language" onchange="changeIndexLanguage()">
+                <option value="kinyarwanda">Kinyarwanda</option>
+                <option value="english">English</option>
+                <option value="french">French</option>
+            </select>
+        </div>
+
+        <form method="post" id="signup-form" action="login" method="post" onsubmit="return validateSignUpForm()">
+            <div class="input-group input-group-lg">
+                <label for="email">Email</label>
+                <input name='email' type="text" class="form-control" placeholder="student@example.com" id="email">
+                <span id="email-error"></span>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <label for="password">Password</label>
+                <input name='password' type="password" class="form-control" placeholder="password" id="password">
+                <span id="password-error"></span>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">SignIn</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

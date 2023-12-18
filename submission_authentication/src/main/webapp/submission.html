@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Submission</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Submission Form</h1>
+        <div class="language-select">
+            <label for="language">Select Language</label>
+            <select id="language" onchange="changeSubmissionLanguage()">
+                <option value="kinyarwanda">Kinyarwanda</option>
+                <option value="english">English</option>
+                <option value="french">French</option>
+            </select>
+        </div>
+
+        <form method="post" id="submission-form" action="submit" onsubmit="return validateSubmissionForm()">
+
+            <div class="input-group input-group-lg">
+                <label for="passportUpload">Upload Student Passport (.jpg or .png)</label>
+                <input id="passportUpload" type="file" name="passportFile" accept=".jpg, .png" onchange="validateFile('passportUpload', 'passport-error')">
+                <span id="passport-error"></span>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <label for="diplomaUpload">Upload Student Diploma (.pdf)</label>
+                <input id="diplomaUpload" type="file" name="diplomaFile" accept=".pdf" onchange="validateFile('diplomaUpload', 'diploma-error')">
+                <span id="diploma-error"></span>
+            </div>
+
+            <div class="input-group input-group-lg">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
